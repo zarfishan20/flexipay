@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #245393;
+  --secondary-color: #3c99d7;
+  --background-color: #fffaf7;
+}
+
 .App {
   text-align: center;
 }
@@ -14,7 +20,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--primary-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,37 +31,29 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--secondary-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 /* General Styles */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
+  background-color: var(--background-color);
   margin: 0;
   padding: 0;
 }
 
 h1, h2, h3 {
-  color: #343a40;
+  color: var(--primary-color);
 }
 
 p {
-  color: #6c757d;
+  color: var(--secondary-color);
 }
 
 /* Hero Section */
 .hero-section {
-  background-color: #f1c40f;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: white;
   height: 80vh;
   display: flex;
   flex-direction: column;
@@ -74,42 +72,43 @@ p {
   margin-bottom: 20px;
 }
 
-.hero-section .btn-warning {
-  background-color: #e67e22;
+.hero-section .btn-primary {
+  background-color: var(--secondary-color);
   border: none;
   font-size: 1.1rem;
   padding: 12px 20px;
 }
 
-.hero-section .btn-warning:hover {
-  background-color: #d35400;
+.hero-section .btn-primary:hover {
+  background-color: var(--primary-color);
 }
 
 /* Navbar */
 .navbar {
-  background-color: #ffffff !important;
+  background-color: var(--primary-color) !important;
 }
 
 .navbar-nav .nav-link {
-  color: #333;
+  color: var(--secondary-color);
+  text-decoration: none;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #f1c40f;
+  color: var(--secondary-color);
 }
 
 .navbar-brand {
   font-weight: bold;
-  color: #e67e22;
+  color: white;
 }
 
 .navbar-toggler {
-  border-color: #e67e22;
+  border-color: var(--secondary-color);
 }
 
 /* Services Section */
 #services {
-  background-color: #ffffff;
+  background-color: var(--background-color);
   padding: 60px 0;
 }
 
@@ -126,14 +125,14 @@ p {
 
 #services .card h5 {
   font-size: 1.5rem;
-  color: #e67e22;
+  color: var(--primary-color);
   font-weight: bold;
   margin-top: 15px;
 }
 
 /* About Section */
 #about {
-  background-color: #f8f9fa;
+  background-color: var(--background-color);
   padding: 60px 0;
 }
 
@@ -142,13 +141,9 @@ p {
   margin-bottom: 20px;
 }
 
-#about p {
-  font-size: 1.2rem;
-}
-
 /* Request a Quote Section */
 #quote {
-  background-color: #ffffff;
+  background-color: var(--background-color);
   padding: 60px 0;
 }
 
@@ -161,7 +156,7 @@ p {
 #quote form {
   max-width: 600px;
   margin: 0 auto;
-  background-color: #f8f9fa;
+  background-color: white;
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -171,19 +166,21 @@ p {
   font-weight: bold;
 }
 
-#quote form .btn-warning {
+#quote form .btn-primary {
   width: 100%;
   padding: 12px 20px;
+  background-color: var(--secondary-color);
+  color: white;
 }
 
-#quote form .btn-warning:hover {
-  background-color: #d35400;
+#quote form .btn-primary:hover {
+  background-color: var(--primary-color);
 }
 
 /* Contact Section */
 #contact {
-  background-color: #f1c40f;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: white;
   padding: 60px 0;
 }
 
@@ -192,33 +189,29 @@ p {
   margin-bottom: 20px;
 }
 
-#contact p {
-  font-size: 1.2rem;
-}
-
 #contact a {
-  color: #fff;
+  color: white;
   font-weight: bold;
 }
 
 #contact a:hover {
-  color: #e67e22;
+  color: var(--secondary-color);
 }
 
 /* Footer */
 footer {
-  background-color: #343a40;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: white;
   padding: 20px 0;
 }
 
 footer a {
-  color: #f1c40f;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
 footer a:hover {
-  color: #e67e22;
+  color: white;
 }
 
 footer p {
@@ -269,5 +262,14 @@ footer p {
 
   #quote h2 {
     font-size: 1.8rem;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

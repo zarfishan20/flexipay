@@ -1,58 +1,35 @@
 :root {
-  --primary-color: #245393;
-  --secondary-color: #3c99d7;
-  --background-color: #fffaf7;
-}
-
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: var(--primary-color);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: var(--secondary-color);
+  --primary-color: #1e3a5f; /* Navy Blue */
+  --secondary-color: #3c99d7; /* Light Blue */
+  --background-color: #fffaf7; /* Off-White */
+  
+  /* Text Colors */
+  --text-color: #4a4a4a; /* Dark Gray for normal text */
+  --heading-color: #003366; /* Deep Navy Blue for headings */
+  --subtext-color: #6c757d; /* Light Gray for subtext */
 }
 
 /* General Styles */
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
+  color: var(--text-color); /* Apply dark gray to body text */
 }
 
 h1, h2, h3 {
-  color: var(--primary-color);
+  color: var(--heading-color); /* Apply deep navy for headings */
 }
 
 p {
-  color: var(--secondary-color);
+  color: var(--subtext-color); /* Apply lighter gray for paragraphs */
 }
 
 /* Hero Section */
 .hero-section {
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, #007bff, #0056b3);
   color: white;
   height: 80vh;
   display: flex;
@@ -73,15 +50,25 @@ p {
 }
 
 .hero-section .btn-primary {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   border: none;
   font-size: 1.1rem;
   padding: 12px 20px;
 }
 
 .hero-section .btn-primary:hover {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
 }
+.custom-btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  color: white;
+}
+
+.custom-btn-primary:hover {
+  background-color: var(--secondary-color);
+}
+
 
 /* Navbar */
 .navbar {
@@ -108,7 +95,7 @@ p {
 
 /* Services Section */
 #services {
-  background-color: var(--background-color);
+  background-color: var(--accent-color);
   padding: 60px 0;
 }
 
@@ -116,11 +103,18 @@ p {
   font-size: 2.5rem;
   margin-bottom: 40px;
   font-weight: 600;
+  color: var(--primary-color);
 }
 
 #services .card {
   border: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+#services .card:hover {
+  transform: translateY(-5px);
 }
 
 #services .card h5 {
@@ -130,20 +124,9 @@ p {
   margin-top: 15px;
 }
 
-/* About Section */
-#about {
-  background-color: var(--background-color);
-  padding: 60px 0;
-}
-
-#about h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-/* Request a Quote Section */
+/* Quote Section */
 #quote {
-  background-color: var(--background-color);
+  background-color: var(--accent-color);
   padding: 60px 0;
 }
 
@@ -151,6 +134,7 @@ p {
   font-size: 2.5rem;
   margin-bottom: 40px;
   font-weight: 600;
+  color: var(--primary-color);
 }
 
 #quote form {
@@ -171,6 +155,8 @@ p {
   padding: 12px 20px;
   background-color: var(--secondary-color);
   color: white;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
 
 #quote form .btn-primary:hover {
@@ -180,7 +166,7 @@ p {
 /* Contact Section */
 #contact {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--background-color);
   padding: 60px 0;
 }
 
@@ -190,8 +176,10 @@ p {
 }
 
 #contact a {
-  color: white;
+  color: var(--background-color);
   font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 #contact a:hover {
@@ -201,24 +189,27 @@ p {
 /* Footer */
 footer {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--background-color);
   padding: 20px 0;
+  text-align: center;
 }
 
 footer a {
   color: var(--secondary-color);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 footer a:hover {
-  color: white;
+  color: var(--background-color);
 }
 
 footer p {
   font-size: 0.9rem;
+  margin-top: 10px;
 }
 
-/* Media Queries for Responsive Design */
+/* Responsive Adjustments */
 @media (max-width: 992px) {
   .hero-section h1 {
     font-size: 2.5rem;
@@ -234,20 +225,13 @@ footer p {
     height: 60vh;
   }
 
-  #services h2 {
-    font-size: 2rem;
-  }
-
-  #quote form {
-    width: 90%;
-  }
-
+  #services h2,
   #quote h2 {
     font-size: 2.2rem;
   }
 
-  .navbar-nav .nav-link {
-    font-size: 1rem;
+  #quote form {
+    width: 90%;
   }
 }
 
@@ -264,12 +248,6 @@ footer p {
     font-size: 1.8rem;
   }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.map-responsive iframe {
+  border-radius: 8px;
 }

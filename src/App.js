@@ -5,6 +5,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
 import logo from "../src/logo.png";
+import { Helmet } from "react-helmet";
+
+
+
 
 const App = () => {
   const formRef = useRef();
@@ -27,6 +31,38 @@ const App = () => {
 
   return (
     <>
+    <Helmet>
+        <title>FlexiPay Systems | Payroll & Bookkeeping Services</title>
+        <meta name="description" content="FlexiPay Systems offers professional payroll and bookkeeping services in London. Trusted by small businesses across the UK." />
+        <meta name="keywords" content="payroll services, bookkeeping, HMRC, accounting, FlexiPay, London accountants" />
+        <meta name="author" content="FlexiPay Systems" />
+        <link rel="canonical" href="https://flexipaysystems.com" />
+
+        <meta property="og:title" content="FlexiPay Systems" />
+        <meta property="og:description" content="Efficient payroll and bookkeeping services for businesses." />
+        <meta property="og:image" content="https://flexipaysystems.com/preview.jpg" />
+        <meta property="og:url" content="https://flexipaysystems.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+
+        <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "FlexiPay Systems",
+            "url": "https://flexipaysystems.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "4 Wangey Road",
+              "addressLocality": "Chadwell Heath",
+              "addressRegion": "London",
+              "postalCode": "RM6 4D",
+              "addressCountry": "UK"
+            },
+            "telephone": "+44 1234 567 890",
+            "email": "info@flexipaysystems.com"
+          }
+        `}</script>
+      </Helmet>
       {/* Header */}
       <Navbar bg="light" expand="lg" className="shadow-sm p-3 fixed-top">
         <Container>

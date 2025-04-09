@@ -71,7 +71,8 @@
   }
   
   .cta-button:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--subtext-color);
+    color: var(--heading-color);
   }
   
   .hero-section .btn-primary {

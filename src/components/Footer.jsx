@@ -4,7 +4,7 @@ const Footer = () => {
 
 
 <footer className="text-center py-3 bg-light mt-4">
-        <p>&copy; {new Date().getFullYear()} FlexiPay | 
+        <p>&copy; {new Date().getFullYear()} FlexiPay Systems | 
             <a href="/privacy-policy">Privacy Policy</a> | 
             <a href="/terms">Terms</a></p>
       </footer>

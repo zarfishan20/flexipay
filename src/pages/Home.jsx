@@ -4,6 +4,7 @@ import HeroSection from '../components/HeroSection'; // Your HeroSection compone
 import ServicesGrid from '../components/ServicesGrid'; // Your ServicesGrid component
 import Testimonials from '../components/Testimonials'; // Your Testimonials component
 import ContactForm from '../components/ContactForm'; // Your ContactForm component
+import Recognition from '../components/Recognitions';
 
 
 
@@ -23,10 +24,19 @@ const HomePage = () => {
         <ServicesGrid />
       </Container>
 
+      <Container  className="py-5" data-aos="fade-up">
+        <Recognition/>
+      </Container>
+
+
       {/* Testimonials Section */}
       <Container  className="py-5" data-aos="fade-up">
         <Testimonials />
       </Container>
+
+
+
+
 
       {/* Contact Section (Optional: Can be a form or just a link) */}
       <Container  className="py-5 text-center" data-aos="fade-up">

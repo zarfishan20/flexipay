@@ -23,7 +23,7 @@ const RequestQuote = () => {
 
     try {
       // Sending email using EmailJS
-      await emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_USER_ID');
+      await emailjs.sendForm('service_wzsvcuq', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_USER_ID');
 
       // On success
       setFormStatus({ type: 'success', message: 'Your request has been submitted successfully!' });

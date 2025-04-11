@@ -2,6 +2,9 @@
 import React, { useRef, useState } from 'react';
 import { Container, Form, Button, Alert,Row, Col } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
+import { Helmet } from 'react-helmet';
+
+
 
 const RequestQuote = () => {
   const formRef = useRef();
@@ -38,6 +41,16 @@ const RequestQuote = () => {
   };
 
   return (
+<>
+<Helmet>
+  <title>Request a Quote | FlexiPay</title>
+  <meta name="description" content="Request a personalized quote for your business’s bookkeeping and payroll needs with FlexiPay." />
+  <meta name="keywords" content="get a quote, bookkeeping quote, payroll pricing, FlexiPay estimate, accounting, HMRC" />
+  <link rel="canonical" href="https://flexipaysystems.com/requestquote" />
+</Helmet>
+
+
+
 <Container id="quote" className="py-5 " data-aos="fade-up">
 <h2 className="text-center mb-4">Request a Quote</h2>
 
@@ -174,7 +187,7 @@ const RequestQuote = () => {
         <Button type="submit" className="custom-btn-primary">Submit</Button>
       </Form>
 </Container>
-
+</>
 );
 };
 

@@ -1,10 +1,21 @@
 
 import React from 'react';
 import { Container } from 'react-bootstrap';
-
+import { Helmet } from 'react-helmet';
 
 const PrivacyPolicy = () => {
     return (
+
+<>
+
+<Helmet>
+        <title>Privacy Policy | FlexiPay</title>
+        <meta name="description" content="Learn how FlexiPay collects, stores, and protects your data. View our full privacy policy here." />
+        <meta name="keywords" content="FlexiPay, privacy policy, data protection, bookkeeping, payroll" />
+        <link rel="canonical" href="https://flexipaysystems.com/privacy-policy" />
+      </Helmet>
+
+
     <Container id="privacy" className="py-5 text-center" data-aos="fade-up">
 
 <h1 className="privacy-title">Privacy Policy</h1>
@@ -61,6 +72,9 @@ const PrivacyPolicy = () => {
             </p>
       
       </Container>
+
+
+      </>
     );
   };
   

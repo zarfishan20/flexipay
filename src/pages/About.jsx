@@ -1,10 +1,21 @@
 
 import React from 'react';
 import { Container } from 'react-bootstrap';
-
+import { Helmet } from 'react-helmet';
 
 const About = () => {
   return (
+
+<>
+
+<Helmet>
+  <title>About Us | FlexiPay</title>
+  <meta name="description" content="Learn about FlexiPay – a trusted UK-based firm specializing in tailored bookkeeping and payroll solutions." />
+  <meta name="keywords" content="about FlexiPay, UK accountancy firm, our story, bookkeeping experts" />
+  <link rel="canonical" href="https://flexipaysystems.com/about" />
+</Helmet>
+
+
 
     <Container id="about" className="about-container py-5 text-center" data-aos="fade-up">
       <h2>Our Story</h2>
@@ -17,6 +28,8 @@ const About = () => {
       </p>
       <a href="/contact">Get in Touch</a> {/* Optional link to contact section */}
     </Container>
+
+    </>
   );
 };
 

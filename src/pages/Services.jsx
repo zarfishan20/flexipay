@@ -1,8 +1,22 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
+
+
+
 
 const ServicesPage = () => {
   return (
+<>
+
+<Helmet>
+  <title>Our Services | FlexiPay</title>
+  <meta name="description" content="Explore our professional bookkeeping, payroll, and financial management services designed for businesses." />
+  <meta name="keywords" content="bookkeeping services, payroll management, accounting, FlexiPay services" />
+  <link rel="canonical" href="https://flexipaysystems.com/services" />
+</Helmet>
+
+
     <Container id="services" className="py-5 text-center" data-aos="fade-up">
       <h2 className="text-center mb-4">Our Services</h2>
       <Row>
@@ -38,6 +52,7 @@ const ServicesPage = () => {
 
       </Row>
     </Container>
+    </>
   );
 };
 

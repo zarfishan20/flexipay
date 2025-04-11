@@ -1,6 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { Container, Form, Button, Alert, Row, Col  } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
+import { Helmet } from 'react-helmet';
+
+
+
+
+
 const Contact = () => {
 
 
@@ -28,6 +34,18 @@ const Contact = () => {
 
 
   return (
+
+<>
+<Helmet>
+  <title>Contact Us | FlexiPay</title>
+  <meta name="description" content="Get in touch with the FlexiPay team for enquiries about our bookkeeping and payroll services." />
+  <meta name="keywords" content="contact FlexiPay, support, enquiry, business help, accountancy contact UK" />
+  <link rel="canonical" href="https://flexipaysystems.com/contact" />
+</Helmet>
+
+
+
+
     <Container id="contact" className="py-5" data-aos="fade-up">
     
       <h2 className="text-center mb-4">Get in Touch</h2>
@@ -120,6 +138,8 @@ const Contact = () => {
         ></iframe>
       </div>
     </Container>
+
+    </>
   );
 };
 

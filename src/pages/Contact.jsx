@@ -1,73 +1,96 @@
-import React from 'react';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-
+import React, { useRef, useState } from 'react';
+import { Container, Form, Button, Alert, Row, Col  } from 'react-bootstrap';
+import emailjs from 'emailjs-com';
 const Contact = () => {
+
+
+  const formRef = useRef();
+  const [formStatus, setFormStatus] = useState(null);
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    try {
+      await emailjs.sendForm(
+        'service_wzsvcuq', // Replace with your service ID
+        'template_9j3u1rs', // Replace with your template ID
+        formRef.current,
+        'Vvqims1TIdWXHU3s7' // Replace with your user/public key
+      );
+
+      setFormStatus({ type: 'success', message: 'Your message has been sent successfully!' });
+      formRef.current.reset();
+    } catch (error) {
+      setFormStatus({ type: 'error', message: 'Failed to send message. Please try again later.' });
+    }
+  };
+
+
+
   return (
     <Container id="contact" className="py-5" data-aos="fade-up">
     
       <h2 className="text-center mb-4">Get in Touch</h2>
             <p>We would love to hear from you. Please fill out the form below, and we'll get back to you!</p>
-           
+            {formStatus && (
+        <Alert variant={formStatus.type === 'success' ? 'success' : 'danger'}>
+          {formStatus.message}
+        </Alert>
+      )} 
       <Row>
     
 
         {/* Contact Form */}
         <Col md={12} className=" mb-4">
       
-             <form
-              name="contact"  // Form name (this will help Netlify handle the submission)
-              method="POST"
-              data-netlify="true"  // Netlify form handler
-              data-netlify-honeypot="bot-field"  // Honeypot field to prevent bots
-              className="contact-form"
-            >
-              {/* Hidden input for Netlify form */}
-              <input type="hidden" name="form-name" value="contact" />
+        <Form ref={formRef} onSubmit={sendEmail}>
+        <Row>
+          <Col md={6}>
+            <Form.Group className="mb-3" controlId="formName">
+              <Form.Label>Name*</Form.Label>
+              <Form.Control type="text" name="name" required placeholder="Your full name" />
+            </Form.Group>
+          </Col>
+          <Col md={6}>
+            <Form.Group className="mb-3" controlId="formEmail">
+              <Form.Label>Email*</Form.Label>
+              <Form.Control type="email" name="email" required placeholder="Your email address" />
+            </Form.Group>
+          </Col>
+        </Row>
 
-              {/* Name Field */}
-              <div className="form-group">
-                <label htmlFor="name">Full Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="form-control"
-                  placeholder="Enter your full name"
-                />
-              </div>
+        <Row>
+          <Col md={6}>
+            <Form.Group className="mb-3" controlId="formPhone">
+              <Form.Label>Phone*</Form.Label>
+              <Form.Control type="tel" name="phone" required placeholder="Your contact number" />
+            </Form.Group>
+          </Col>
+          <Col md={6}>
+            <Form.Group className="mb-3" controlId="formSubject">
+              <Form.Label>Subject*</Form.Label>
+              <Form.Control type="text" name="subject" required placeholder="Subject or purpose" />
+            </Form.Group>
+          </Col>
+        </Row>
 
-              {/* Email Field */}
-              <div className="form-group">
-                <label htmlFor="email">Email Address</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="form-control"
-                  placeholder="Enter your email address"
-                />
-              </div>
+        <Form.Group className="mb-3" controlId="formMessage">
+          <Form.Label>Message / Requirements*</Form.Label>
+          <Form.Control
+            as="textarea"
+            name="message"
+            rows={4}
+            required
+            placeholder="Briefly describe your needs or request a consultation"
+          />
+        </Form.Group>
 
-              {/* Message Field */}
-              <div className="form-group">
-                <label htmlFor="message">Your Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  className="form-control"
-                  rows="4"
-                  placeholder="Write your message here"
-                ></textarea>
-              </div>
-
-              {/* Submit Button */}
-              <Button type="submit" size="lg" className="btn">
-                Send Message
-              </Button>
-            </form>
+        <div className="text-center">
+          <Button type="submit" className="custom-btn-primary mt-2">
+            Send Message
+          </Button>
+        </div>
+      </Form>
          
         </Col>
 

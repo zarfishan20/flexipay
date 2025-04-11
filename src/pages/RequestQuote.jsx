@@ -1,6 +1,6 @@
 
 import React, { useRef, useState } from 'react';
-import { Container, Form, Button, Alert } from 'react-bootstrap';
+import { Container, Form, Button, Alert,Row, Col } from 'react-bootstrap';
 import emailjs from 'emailjs-com';
 
 const RequestQuote = () => {
@@ -9,27 +9,28 @@ const RequestQuote = () => {
 
   // Handle form submission
   const sendEmail = async (e) => {
-    e.preventDefault();
-
-    // Collect form data
-    const formData = new FormData(formRef.current);
-
-    // Example of preparing email payload
-    const emailPayload = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message'),
-    };
+    e.preventDefault(); 
 
     try {
       // Sending email using EmailJS
-      await emailjs.sendForm('service_wzsvcuq', 'template_1b7o776', formRef.current, 'Vvqims1TIdWXHU3s7');
+      await emailjs.sendForm(
+        'service_wzsvcuq', 
+        'template_1b7o776', 
+        formRef.current, 
+        'Vvqims1TIdWXHU3s7'
+      );
 
       // On success
-      setFormStatus({ type: 'success', message: 'Your request has been submitted successfully!' });
+      setFormStatus({
+         type: 'success', 
+         message: 'Your request has been submitted successfully!' 
+        });
     } catch (error) {
       // On error
-      setFormStatus({ type: 'error', message: 'There was an issue submitting your request. Please try again later.' });
+      setFormStatus({ 
+        type: 'error', 
+        message: 'There was an issue submitting your request. Please try again later.'
+       });
     }
 
     // Reset form after submission
@@ -37,8 +38,8 @@ const RequestQuote = () => {
   };
 
   return (
-<Container id="quote" className="py-5 text-center" data-aos="fade-up">
-<h2>Request a Quote</h2>
+<Container id="quote" className="py-5 " data-aos="fade-up">
+<h2 className="text-center mb-4">Request a Quote</h2>
 
 {/* Show success or error message */}
 {formStatus && (
@@ -47,39 +48,131 @@ const RequestQuote = () => {
         </Alert>
       )}
 
-<Form ref={formRef} onSubmit={sendEmail} netlify>
-  <Form.Group controlId="name" className="mb-3">
-    <Form.Label>Your Name</Form.Label>
-    <Form.Control 
-    type="text" 
-    name="name" 
-    placeholder="Enter your name" 
-    required />
-    </Form.Group>
+<Form ref={formRef} onSubmit={sendEmail}>
+<input type="hidden" name="date" value={new Date().toLocaleString()} />
 
-  <Form.Group controlId="email" className="mb-3">
-    <Form.Label>Your Email</Form.Label>
-    <Form.Control 
-    type="email" 
-    name="email" 
-    placeholder="Enter your email" 
-    required />
-    </Form.Group>
+        <Row>
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Name*</Form.Label>
+              <Form.Control type="text" name="name" required />
+            </Form.Group>
+          </Col>
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Company*</Form.Label>
+              <Form.Control type="text" name="company" required />
+            </Form.Group>
+          </Col>
+        </Row>
 
-  <Form.Group controlId="message" className="mb-3">
-    <Form.Label>Your Requirements</Form.Label>
-    <Form.Control 
-    as="textarea" 
-    name="message"
-     rows={3} 
-     placeholder="Describe your requirements"
-      required />
-      </Form.Group>
+        <Row>
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Phone Number*</Form.Label>
+              <Form.Control type="tel" name="phone" required placeholder="Tel" />
+            </Form.Group>
+          </Col>
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Email*</Form.Label>
+              <Form.Control type="email" name="email" required />
+            </Form.Group>
+          </Col>
+        </Row>
 
-  <Button type="submit" className="mt-3 custom-btn-primary">
-    Submit
-    </Button>
-</Form>
+        <Row>
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Profession</Form.Label>
+              <Form.Control type="text" name="profession" placeholder="Trade/Profession" />
+            </Form.Group>
+          </Col>
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Town/City</Form.Label>
+              <Form.Control type="text" name="town" placeholder="Town/City" />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={4}>
+            <Form.Group className="mb-3">
+              <Form.Label>Years Trading</Form.Label>
+              <Form.Control type="number" name="yearsTrading" placeholder="e.g. 5" />
+            </Form.Group>
+          </Col>
+          <Col md={4}>
+            <Form.Group className="mb-3">
+              <Form.Label>Approximate Turnover</Form.Label>
+              <Form.Control type="number" name="turnover" placeholder="e.g. 100000" />
+            </Form.Group>
+          </Col>
+          <Col md={4}>
+            <Form.Group className="mb-3">
+              <Form.Label>Number of Employees</Form.Label>
+              <Form.Control type="number" name="employees" />
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Accounting System Used</Form.Label>
+          <Form.Control type="text" name="accountingSystem" placeholder="e.g. QuickBooks" />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Services Required</Form.Label>
+          <Form.Control type="text" name="servicesRequired" placeholder="e.g. Payroll, Bookkeeping" />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Financial Year End</Form.Label>
+          <Form.Control type="text" name="financialYearEnd" placeholder="e.g. 31 March" />
+        </Form.Group>
+
+        <Row>
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Legal Status of Business</Form.Label>
+              <Form.Select name="legalStatus" required>
+                <option value="">Select...</option>
+                <option value="Sole Trader">Sole Trader</option>
+                <option value="Partnership">Partnership</option>
+                <option value="Limited Company">Limited Company</option>
+                <option value="Limited Liability Partnership">Limited Liability Partnership</option>
+              </Form.Select>
+            </Form.Group>
+          </Col>
+          <Col md={6}>
+            <Form.Group className="mb-3">
+              <Form.Label>Are you VAT Registered?</Form.Label>
+              <Form.Select name="vatRegistered" required>
+                <option value="">Select...</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </Form.Select>
+            </Form.Group>
+          </Col>
+        </Row>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Additional Comments (optional)</Form.Label>
+          <Form.Control as="textarea" name="comments" rows={3} />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Check
+            type="checkbox"
+            name="privacyPolicy"
+            label="By submitting this form you agree to our privacy policy."
+            required
+          />
+        </Form.Group>
+
+        <Button type="submit" className="custom-btn-primary">Submit</Button>
+      </Form>
 </Container>
 
 );

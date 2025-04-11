@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import './index.css';
+
 import TopBar from "./components/TopBar";
 import Navbar from "./components/Navbar"; // Custom Navbar
 import Footer from "./components/Footer";
@@ -57,11 +57,18 @@ const App = () => {
 
       <Router>
             {/* Top Bar */}
+            <div className="topbar bg-light py-1 border-bottom small">
             <TopBar />
-      
+            </div>
       {/* Navbar */}
+<div  className="  shadow-sm p-3 navbar-offset">
       <Navbar />
+      
+      </div>
+
+
         {/* Main page content */}
+        <div className="main-content-offset">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -72,6 +79,7 @@ const App = () => {
 
       {/* Footer */}
       <Footer />
+      </div>
       </Router>
     </>
   );

@@ -13,37 +13,24 @@ import Recognition from '../components/Recognitions';
 const HomePage = () => {
   return (
     <>
-
-      
+     
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Services Section */}
-      <Container  className="py-5 text-center" data-aos="fade-up">
-       
+        {/* Services Section */}
+  
         <ServicesGrid />
-      </Container>
-
-      <Container  className="py-5" data-aos="fade-up">
+      
         <Recognition/>
-      </Container>
-
-
+      
       {/* Testimonials Section */}
-      <Container  className="py-5" data-aos="fade-up">
+     
         <Testimonials />
-      </Container>
-
-
-
-
 
       {/* Contact Section (Optional: Can be a form or just a link) */}
-      <Container  className="py-5 text-center" data-aos="fade-up">
+   
          <ContactForm />
-      </Container>
-
-      
+    
     </>
   );
 };

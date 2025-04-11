@@ -6,7 +6,7 @@ const NavbarComponent = () => {
   return (
 
 
-<Navbar bg="light" expand="lg" className="shadow-sm p-3 fixed-top">
+<Navbar bg="" expand="lg" className='text-primary' >
 <Container>
   <Navbar.Brand href="/" data-aos="fade-down" className='navbar-brand'>FlexiPay</Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />

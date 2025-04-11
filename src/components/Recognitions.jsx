@@ -7,7 +7,7 @@ return(
 <Container
 fluid
 className="hero-section py-5 d-flex align-items-center justify-content-center" 
-id="contact" 
+id="recognition" 
 data-aos="fade-up">
 
 <h5>RECOGNIZED EXCELLENCE</h5>

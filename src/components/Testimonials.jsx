@@ -7,7 +7,9 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 const Testimonials = () => {
   return (
 
-<Container id="services" className="py-5 text-center" data-aos="fade-up">
+<Container 
+fluid
+id="testimonials" className="services" data-aos="fade-up">
 <h5>TESTIMONIALS</h5>
         <h2 className="text-center mb-4">Client Testimonials for FlexiPay</h2>
         <Row>

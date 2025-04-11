@@ -4,7 +4,9 @@ import { Container } from "react-bootstrap";
 const ContactUs = () => {
   return (
 
-<Container id="contact" className="py-5 text-center" data-aos="fade-up">
+<Container 
+fluid
+ id="contact" className="text-center py-5 d-flex align-items-center justify-content-center " data-aos="fade-up">
 <h2>Contact Us</h2>
 <p>Phone: 01234 567 890</p>
 <p>Address: 4 Wangey Road, Chadwell Heath, London, RM6 4D</p>

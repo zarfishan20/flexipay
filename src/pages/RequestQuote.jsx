@@ -47,7 +47,7 @@ const RequestQuote = () => {
         </Alert>
       )}
 
-<Form ref={formRef} onSubmit={sendEmail}>
+<Form ref={formRef} onSubmit={sendEmail} netlify>
   <Form.Group controlId="name" className="mb-3">
     <Form.Label>Your Name</Form.Label>
     <Form.Control 

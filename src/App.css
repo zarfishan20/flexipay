@@ -1,0 +1,375 @@
+/* Keep topbar at the very top */
+.topbar {
+  color: var(--primary-color);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1040;
+  }
+
+  .topbar a{
+
+    color: var(--heading-color);
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  
+    .navbar-offset {
+      background-color: var(--accent-color);
+      top: 27px; /* adjust based on your topbar height */
+      position: fixed;
+      width: 100%;
+      z-index: 1020;
+      
+    }
+  
+    .navbar .navbar-brand {
+      color: var(--heading-color);  
+      font-size: 2rem; /* Example: Set font size for the site title */
+      font-weight: bold; /* Make the site title bold */
+      transition: color 0.3s ease, font-size 0.3s ease;
+  }
+  .navbar .navbar-brand:hover {
+    color: var(--primary-color) ;/* Example: Hover color (you can change this to any color) */
+   /* Increase font size on hover (optional) */
+    font-weight: bolder;
+  }
+
+  .navbar-nav .nav-link {
+    color: var(--heading-color);
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: var(--primary-color);
+  }
+    
+    /* Push main content below both fixed elements */
+  .main-content-offset {
+    padding-top: 150px; /* 32px topbar + ~64px navbar */
+  }
+  
+  h1, h2, h3, h5 , h6{
+    color: var(--heading-color); /* Apply deep navy for headings */
+  }
+  
+  p {
+    color: var(--subtext-color); /* Apply lighter gray for paragraphs */
+  }
+
+
+
+
+  
+    /* Hero Section */
+    .hero-section {
+      background-color: var(--primary-color);
+      padding: 5rem 1rem;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: var(--heading-color);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .hero-content {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+  
+    }
+    
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+    }
+    
+    .hero-section p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    
+    .hero-section .btn-primary {
+        background-color: var(--primary-color);
+        border: none;
+        font-size: 1.1rem;
+        font-weight: bold;
+        padding: 12px 20px;
+      }
+      
+      .hero-section .btn-primary:hover {
+        background-color: var(--secondary-color);
+        color: var(--heading-color);
+        font-weight: bolder;
+      }
+      .custom-btn-primary {
+        background-color: var(--primary-color);
+        border: none;
+        color: white;
+      }
+      
+      .custom-btn-primary:hover {
+        background-color: var(--secondary-color);
+      }
+
+
+
+      /* Services Section */
+  .services {
+    
+    background-color: var(--accent-color);
+    padding: 5rem 1rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top:35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+    
+  .services-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+
+  }
+  
+  .services h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+  
+  .services p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  
+  .services h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+  
+ .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+ .card:hover {
+    transform: translateY(-5px);
+  }
+  
+ .card h5 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 15px;
+  }
+      /* Contact Section */
+  #contact {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 5rem 1rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  
+  }
+  
+
+
+#contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+#contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--accent-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+#contact form label {
+  color: var(--heading-color);
+  text-align: left;
+  font-weight: bold;
+}
+
+#contact form .btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 12px 20px;
+}
+
+#contact form .btn-primary:hover {background-color: var(--secondary-color);
+  color: var(--heading-color);
+  font-weight: bolder;
+}
+  
+
+  
+  #contact a {
+    color: var(--background-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  #contact a:hover {
+    color: var(--secondary-color);
+  }
+
+  
+  #contact p {
+    color: var(--background-color);
+  }
+
+
+
+  .map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+  }
+  
+  .map-responsive iframe {
+    border-radius: 8px;
+    left: 0;
+    top: 0;
+    border: 0;
+  }
+
+ /* Quote Section */
+ #quote {
+  background-color: var(--primary-color);
+  padding: 60px 0;
+}
+
+#quote h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+#quote form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--accent-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#quote form .form-label {
+  color: var(--heading-color);
+  font-weight: bold;
+}
+
+#quote form .btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 12px 20px;
+}
+
+#quote form .btn-primary:hover {background-color: var(--secondary-color);
+  color: var(--heading-color);
+  font-weight: bolder;
+}
+
+
+
+
+
+
+
+   /* Footer */
+   footer {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: var(--secondary-color);
+  }
+  
+  footer p {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
+
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-section p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-section {
+      height: 60vh;
+    }
+  
+    #services h2,
+    #quote h2 {
+      font-size: 2.2rem;
+    }
+  
+    #quote form {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+  
+    #quote form {
+      width: 100%;
+    }
+  
+    #quote h2 {
+      font-size: 1.8rem;
+    }
+  }

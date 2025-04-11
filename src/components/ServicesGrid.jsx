@@ -4,7 +4,11 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 const Services = () => {
   return (
 
-<Container id="services" className="py-5 text-center" data-aos="fade-up">
+<Container 
+fluid
+className="services text-center py-5 d-flex align-items-center justify-content-center" 
+id="services" 
+data-aos="fade-up">
   <h5>OUR SERVICES</h5>
 <h2 className="text-center mb-4">Streamline Your Business Growth</h2>
 <Row>

@@ -76,6 +76,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      overflow: hidden;
     }
     
     .hero-content {
@@ -198,6 +199,20 @@
   
   }
   
+  #recognition {
+    background-color: var(--primary-color);
+    padding: 5rem 1rem;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: var(--heading-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+  }
 
 #recognition p{
   color: var(--background-color);

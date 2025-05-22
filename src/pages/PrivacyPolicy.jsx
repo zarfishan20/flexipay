@@ -2,6 +2,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
+import BackButton from "../components/BackButton";
 
 const PrivacyPolicy = () => {
     return (
@@ -14,7 +15,7 @@ const PrivacyPolicy = () => {
         <meta name="keywords" content="FlexiPay, privacy policy, data protection, bookkeeping, payroll" />
         <link rel="canonical" href="https://flexipaysystems.com/privacy-policy" />
       </Helmet>
-
+<BackButton />
 
     <Container id="privacy" className="py-5 text-center" data-aos="fade-up">
 

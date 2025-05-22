@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
+import BackButton from "../components/BackButton";
 
 const Terms = () => {
     return (
@@ -13,9 +14,12 @@ const Terms = () => {
         <meta name="keywords" content="FlexiPay, terms and conditions, data protection, bookkeeping, payroll, data" />
         <link rel="canonical" href="https://flexipaysystems.com/terms" />
       </Helmet>
-    
+    <BackButton/>
     
      <Container id="terms" className="py-5 text-center" data-aos="fade-up">
+ 
+ 
+ 
  <h1 className="terms-title">Terms & Conditions</h1>
             <p><strong>Effective Date:</strong> 11 May 2025</p>
 

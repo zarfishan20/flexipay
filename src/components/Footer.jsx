@@ -13,7 +13,7 @@ const Footer = () => {
                
                </a>| 
             <Link to="/privacy-policy">Privacy Policy</Link> |
-<Link to="/terms-conditions">Terms & Conditions</Link>
+<Link to="/terms">Terms & Conditions</Link>
             </p>
       </footer>
         );

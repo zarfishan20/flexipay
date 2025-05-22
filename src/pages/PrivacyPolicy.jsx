@@ -15,10 +15,10 @@ const PrivacyPolicy = () => {
         <meta name="keywords" content="FlexiPay, privacy policy, data protection, bookkeeping, payroll" />
         <link rel="canonical" href="https://flexipaysystems.com/privacy-policy" />
       </Helmet>
-<BackButton />
+
 
     <Container id="privacy" className="py-5 text-center" data-aos="fade-up">
-
+<BackButton />
 <h1 className="privacy-title">Privacy Policy</h1>
             <p><strong>Effective Date:</strong> 11 May 2025</p>
             <p>

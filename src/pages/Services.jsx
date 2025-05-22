@@ -12,7 +12,7 @@ const ServicesPage = () => {
 <Helmet>
   <title>Our Services | FlexiPay</title>
   <meta name="description" content="Explore our professional bookkeeping, payroll, and financial management services designed for businesses." />
-  <meta name="keywords" content="bookkeeping services, payroll management, accounting, FlexiPay services" />
+  <meta name="keywords" content="bookkeeping services, payroll management, accounting, FlexiPay services, financial servicecs, London accountants, East London accountants" />
   <link rel="canonical" href="https://flexipaysystems.com/services" />
 </Helmet>
 

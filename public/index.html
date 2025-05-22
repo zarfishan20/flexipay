@@ -17,6 +17,52 @@
     <title>Flexipay</title>
   </head>
   <body >
+
+<!-- Hidden version for Netlify form indexing -->
+<form name="business-quote-form" netlify netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="date" />
+  <input type="text" name="name" />
+  <input type="text" name="company" />
+  <input type="tel" name="phone" />
+  <input type="email" name="email" />
+  <input type="text" name="profession" />
+  <input type="text" name="town" />
+  <input type="number" name="yearsTrading" />
+  <input type="number" name="turnover" />
+  <input type="number" name="employees" />
+  <input type="text" name="accountingSystem" />
+  <input type="text" name="servicesRequired" />
+  <input type="text" name="financialYearEnd" />
+  <select name="legalStatus">
+    <option value="Sole Trader"></option>
+    <option value="Partnership"></option>
+    <option value="Limited Company"></option>
+    <option value="Limited Liability Partnership"></option>
+  </select>
+  <select name="vatRegistered">
+    <option value="Yes"></option>
+    <option value="No"></option>
+  </select>
+  <textarea name="comments"></textarea>
+  <input type="checkbox" name="privacyPolicy" />
+</form>
+
+<script>
+  // Add current timestamp to hidden date field
+  document.getElementById("submission-date").value = new Date().toLocaleString();
+</script>
+<!-- Hidden dummy form for Netlify to pick up structure -->
+<form name="contact-form" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <input type="tel" name="phone" />
+  <input type="text" name="subject" />
+  <textarea name="message"></textarea>
+</form>
+
+
+
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
       

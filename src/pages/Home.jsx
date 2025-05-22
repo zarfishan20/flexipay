@@ -17,7 +17,7 @@ const HomePage = () => {
 <Helmet>
   <title>FlexiPay | Bookkeeping & Payroll Services</title>
   <meta name="description" content="FlexiPay offers expert bookkeeping and payroll solutions for small and medium-sized businesses in the UK." />
-  <meta name="keywords" content="bookkeeping, payroll, accountancy, FlexiPay,HMRC,Self assessments, sole trader, comopany, business accountants, business finance UK" />
+  <meta name="keywords" content="bookkeeping, payroll, accountancy, FlexiPay,HMRC,Self assessments, sole trader, company, business accountants, business finance UK" />
   <link rel="canonical" href="https://flexipaysystems.com/" />
 </Helmet>
      

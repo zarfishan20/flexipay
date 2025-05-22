@@ -10,7 +10,7 @@ const Terms = () => {
     <Helmet>
         <title>Terms and Conditions | FlexiPay</title>
         <meta name="description" content="Learn how FlexiPay collects, stores, and protects your data. View our full privacy policy here." />
-        <meta name="keywords" content="FlexiPay, terms and conditions, data protection, bookkeeping, payroll" />
+        <meta name="keywords" content="FlexiPay, terms and conditions, data protection, bookkeeping, payroll, data" />
         <link rel="canonical" href="https://flexipaysystems.com/terms" />
       </Helmet>
     

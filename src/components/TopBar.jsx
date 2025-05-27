@@ -12,7 +12,7 @@ const TopBar = () => {
           </Col>
           <Col xs={12} md={6} className="text-end">
           <a href="mailto:info@flexipaysystems.com">info@flexipaysystems.com</a> | 
-    <a href="tel:+441234567890"> 01234 567890</a> | 
+    <a href="tel:+447828693818">07828693818</a> | 
     Mon - Fri: 10am - 6pm </Col>
         </Row>
       </Container>

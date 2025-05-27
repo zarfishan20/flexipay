@@ -117,7 +117,7 @@ const Contact = () => {
     <Col md={12} className="text-center mb-4">
  
             <h5>Contact Information</h5>
-            <p>Phone: <a href="tel:+441234567890">01234 567 890</a></p>
+            <p>Phone: <a href="tel:+447828693818">07828693818</a></p>
             <p>Address: 4 Wangey Road, Chadwell Heath, London, RM6 4D</p>
             <p>Email: <a href="mailto:info@flexipaysystems.com">info@flexipaysystems.com</a></p>
       

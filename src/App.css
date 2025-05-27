@@ -17,7 +17,7 @@
   
     .navbar-offset {
       background-color: var(--accent-color);
-      top: 27px; /* adjust based on your topbar height */
+      top: 35px; /* adjust based on your topbar height */
       position: fixed;
       width: 100%;
       z-index: 1020;
@@ -48,7 +48,7 @@
     
     /* Push main content below both fixed elements */
   .main-content-offset {
-    padding-top: 150px; /* 32px topbar + ~64px navbar */
+    padding-top: 220px; /* 32px topbar + ~64px navbar */
   }
   
   h1, h2, h3, h5 , h6{

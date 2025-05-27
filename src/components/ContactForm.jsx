@@ -8,7 +8,7 @@ const ContactUs = () => {
 fluid
  id="contact" className="hero-section text-center py-5 d-flex align-items-center justify-content-center " data-aos="fade-up">
 <h2>Contact Us</h2>
-<p>Phone: 01234 567 890</p>
+<p>Phone: 07828693818</p>
 <p>Address: 4 Wangey Road, Chadwell Heath, London, RM6 4D</p>
 <p>Email: <a href="mailto:info@flexipaysystems.com">info@flexipaysystems.com</a></p>
 

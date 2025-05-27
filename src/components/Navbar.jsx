@@ -29,14 +29,16 @@ const NavbarComponent = () => {
  ref={navRef} >
 <Container>
   <Navbar.Brand href="/" data-aos="fade-down" className='navbar-brand'>
-   <img 
-        src="logo.svg" 
-        alt="FlexiPay Logo" 
-        width="100" 
-        height="100" 
-        className="d-inline-block align-top me-2"
-      />
-      <span className="fs-1 fw-bold">FlexiPay</span>
+    <div className="d-flex align-items-center">
+    <img 
+      src="logo.png" 
+      alt="FlexiPay Logo" 
+      width="100" 
+      height="100" 
+      className="d-inline-block me-2"
+    />
+    <span className="fs-1 fw-bold">FlexiPay</span>
+  </div>
   </Navbar.Brand>
   <Navbar.Toggle 
   aria-controls="basic-navbar-nav" 

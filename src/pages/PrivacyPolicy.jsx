@@ -1,5 +1,5 @@
 
-import React from 'react';
+
 import { Container } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import BackButton from "../components/BackButton";

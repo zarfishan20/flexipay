@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -33,8 +33,8 @@ const NavbarComponent = () => {
     <img 
       src="logo.png" 
       alt="FlexiPay Logo" 
-      width="100" 
-      height="100" 
+      width="50" 
+      height="50" 
       className="d-inline-block me-2"
     />
     <span className="fs-1 fw-bold">FlexiPay</span>

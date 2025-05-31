@@ -17,7 +17,7 @@ const RequestQuote = () => {
     try {
       // Sending email using EmailJS
       await emailjs.sendForm(
-        'service_wzsvcuq', 
+        'service_64wx75k', 
         'template_1b7o776', 
         formRef.current, 
         'Vvqims1TIdWXHU3s7'

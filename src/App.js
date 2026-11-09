@@ -1,11 +1,11 @@
 import  { useEffect } from 'react';
 import { Helmet } from "react-helmet";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 import TopBar from "./components/TopBar";
-import Navbar from "./components/Navbar"; // Custom Navbar
+import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Services from "./pages/Services";
@@ -16,10 +16,19 @@ import RequestQuote from './pages/RequestQuote';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    AOS.refreshHard();
+  }, [pathname]);
+  return null;
+};
+
 const App = () => {
 
   useEffect(() => {
-    AOS.init({ duration: 1000 });
+    AOS.init({ duration: 900, easing: 'ease-out-cubic', once: true, offset: 60 });
   }, []);
 
  
@@ -58,32 +67,22 @@ const App = () => {
       </Helmet>
 
       <Router>
-            {/* Top Bar */}
-            <div className="topbar bg-light py-1 border-bottom small">
-            <TopBar />
-            </div>
-      {/* Navbar */}
-<div  className="  shadow-sm p-3 navbar-offset">
-      <Navbar />
-      
-      </div>
-
-
-        {/* Main page content */}
-        <div className="main-content-offset">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/requestquote" element={<RequestQuote />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms" element={<Terms />} />
-        </Routes>
-
-      {/* Footer */}
-      <Footer />
-      </div>
+        <ScrollToTop />
+        <div className="grain" aria-hidden="true" />
+        <TopBar />
+        <Navbar />
+        <main className="site-main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/requestquote" element={<RequestQuote />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms" element={<Terms />} />
+          </Routes>
+        </main>
+        <Footer />
       </Router>
     </>
   );

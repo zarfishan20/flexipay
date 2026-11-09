@@ -1,22 +1,48 @@
+import { useEffect, useState } from 'react';
+import { Quote } from './Icons';
 
-import { Container, Row, Col, Card } from 'react-bootstrap';
-
+const quotes = [
+  { q: 'Reliable and professional!', who: 'Sarah M.' },
+  { q: 'Helped us streamline payroll.', who: 'John D.' },
+  { q: 'Highly recommend FlexiPay.', who: 'Anita R.' },
+];
 
 const Testimonials = () => {
-  return (
+  const [active, setActive] = useState(0);
 
-<Container 
-fluid
-id="testimonials" className="services" data-aos="fade-up">
-<h5>TESTIMONIALS</h5>
-        <h2 className="text-center mb-4">Client Testimonials for FlexiPay</h2>
-        <Row className='g-4'>
-          <Col md={4}><Card className="p-3 shadow-sm h-100"><p >"Reliable and professional!"</p><strong>– Sarah M.</strong></Card></Col>
-          <Col md={4}><Card className="p-3 shadow-sm h-100"><p>"Helped us streamline payroll."</p><strong>– John D.</strong></Card></Col>
-          <Col md={4}><Card className="p-3 shadow-sm h-100"><p>"Highly recommend FlexiPay."</p><strong>– Anita R.</strong></Card></Col>
-        </Row>
-      </Container>
-       );
-      };
-      
-      export default Testimonials;
+  useEffect(() => {
+    const t = setInterval(() => setActive((a) => (a + 1) % quotes.length), 5500);
+    return () => clearInterval(t);
+  }, [active]);
+
+  return (
+    <section className="section testimonials" id="testimonials">
+      <div className="wrap testimonials__grid">
+        <div data-aos="fade-up">
+          <p className="eyebrow">Testimonials</p>
+          <h2>What our clients <em>tell us</em></h2>
+          <div className="testimonials__nav" role="tablist" aria-label="Testimonials">
+            {quotes.map((q, i) => (
+              <button key={q.who} role="tab" aria-selected={i === active} className={i === active ? 'is-active' : ''} onClick={() => setActive(i)}>
+                <span className="mono">0{i + 1}</span> {q.who}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="quote-stage" data-aos="fade-up" data-aos-delay="100">
+          <Quote width={64} height={64} className="quote-stage__mark" />
+          {quotes.map((q, i) => (
+            <figure key={q.who} className={`quote ${i === active ? 'is-active' : ''}`} aria-hidden={i !== active}>
+              <blockquote>“{q.q}”</blockquote>
+              <figcaption>— {q.who}</figcaption>
+            </figure>
+          ))}
+          <div className="quote-stage__bar"><span key={active} /></div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Testimonials;

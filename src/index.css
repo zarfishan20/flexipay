@@ -1,41 +1,69 @@
 :root {
-    --primary-color: #19747E; /* Deep Teal */
-    --secondary-color: #A9D6E5; /* Light Sky Blue */
-    --background-color: #D1E8E2; /* Soft Mint Green */
-    --accent-color: #E2E2E2; /* Light Gray */
-    
-    /* Text Colors */
-    --text-color: #4a4a4a; /* Dark Gray for normal text */
-    --heading-color: #003366; /* Deep Navy Blue for headings */
-    --subtext-color: #6c757d; /* Light Gray for subtext */
-  }
+  /* Brand */
+  --ink: #0C3536;          /* deep teal ink */
+  --ink-2: #124A4B;
+  --teal: #19747E;         /* logo teal */
+  --teal-soft: #CFE6E3;
+  --paper: #F5F0E6;        /* warm paper */
+  --paper-2: #EDE5D6;
+  --card: #FBF8F2;
+  --accent: #E5A042;       /* saffron */
+  --accent-deep: #C9822A;
+  --rule: rgba(12, 53, 54, 0.14);
+  --text: #1F2E2E;
+  --muted: #5B6B69;
 
+  /* Legacy aliases */
+  --primary-color: var(--teal);
+  --heading-color: var(--ink);
+  --text-color: var(--text);
+  --subtext-color: var(--muted);
 
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Instrument Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
-  body {
-   
-    margin: 0;
-    padding: 0;
-  
-  }
-  /* Global Button Styles */
-.btn {
-  background-color: var(--primary-color);
-  border: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-  padding: 12px 20px;
-  border-radius: 50px; /* Optional: To make the buttons rounded */
-  transition: background-color 0.3s ease;
+  --radius: 22px;
+  --radius-sm: 12px;
+  --shadow: 0 1px 0 rgba(12,53,54,.04), 0 18px 40px -18px rgba(12,53,54,.28);
+  --ease: cubic-bezier(.2,.7,.2,1);
 }
 
-/* Hover Effect for Buttons */
-.btn:hover {
-  background-color: var(--secondary-color);
-  color: var(--heading-color);
-  font-weight: bolder;
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-strong {
-  color: var(--primary-color);
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-variation-settings: 'opsz' 96, 'SOFT' 30;
+  color: var(--ink);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin: 0 0 .5em;
+}
+h1 em, h2 em, h3 em { font-style: italic; font-weight: 400; color: var(--teal); }
+
+p { margin: 0 0 1em; color: var(--muted); }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+strong { color: var(--ink); font-weight: 600; }
+
+::selection { background: var(--accent); color: var(--ink); }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
 }

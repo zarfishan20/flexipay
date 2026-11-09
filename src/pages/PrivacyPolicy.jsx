@@ -1,6 +1,5 @@
 
 
-import { Container } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import BackButton from "../components/BackButton";
 
@@ -17,8 +16,7 @@ const PrivacyPolicy = () => {
       </Helmet>
 
 
-    <Container id="privacy" className="py-5 text-center" data-aos="fade-up">
-<BackButton />
+    <section className="section legal" id="privacy"><div className="wrap legal__doc"><BackButton />
 <h1 className="privacy-title">Privacy Policy</h1>
             <p><strong>Effective Date:</strong> 11 May 2025</p>
             <p>
@@ -72,7 +70,7 @@ const PrivacyPolicy = () => {
               <strong>info@flexipaysystems.com</strong>
             </p>
       
-      </Container>
+      </div></section>
 
 
       </>

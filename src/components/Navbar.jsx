@@ -1,59 +1,75 @@
-import { useState, useRef, useEffect } from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { ArrowUpRight } from './Icons';
+
+const links = [
+  { to: '/', label: 'Home', end: true },
+  { to: '/about', label: 'About' },
+  { to: '/services', label: 'Services' },
+  { to: '/contact', label: 'Contact' },
+];
 
 const NavbarComponent = () => {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
 
-  const [expanded, setExpanded] = useState(false);
-  const navRef = useRef(null);
+  useEffect(() => setOpen(false), [pathname]);
 
-   // Close navbar on outside click
-   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
-        setExpanded(false);
-      }
-    };
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [expanded]);
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
 
   return (
+    <header className={`nav ${scrolled ? 'nav--scrolled' : ''} ${open ? 'nav--open' : ''}`}>
+      <div className="wrap nav__inner">
+        <Link to="/" className="nav__brand" aria-label="FlexiPay home">
+          <img src="/logo.png" alt="" width="46" height="37" />
+          <span>Flexi<em>Pay</em></span>
+        </Link>
 
-<Navbar bg=""
- expand="lg" 
- expanded={expanded}
- onToggle={(value) => setExpanded(value)}
- className="text-primary"
- ref={navRef} >
-<Container>
-  <Navbar.Brand href="/" data-aos="fade-down" className='navbar-brand'>
-    <div className="d-flex align-items-center">
-    <img 
-      src="logo.png" 
-      alt="FlexiPay Logo" 
-      width="50" 
-      height="50" 
-      className="d-inline-block me-2"
-    />
-    <span className="fs-1 fw-bold">FlexiPay</span>
-  </div>
-  </Navbar.Brand>
-  <Navbar.Toggle 
-  aria-controls="basic-navbar-nav" 
-  />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="ms-auto">
-      <Nav.Link as={Link} to="/" >Home</Nav.Link>
-      <Nav.Link as={Link} to="/about">About</Nav.Link>
-      <Nav.Link as={Link} to="/services">Services</Nav.Link>
-      <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-      <Nav.Link as={Link} to="/requestquote" >Request a Quote</Nav.Link>
-    </Nav>
-  </Navbar.Collapse>
-</Container>
-</Navbar>
+        <nav className="nav__links" aria-label="Main">
+          {links.map((l) => (
+            <NavLink key={l.to} to={l.to} end={l.end} className={({ isActive }) => `nav__link ${isActive ? 'is-active' : ''}`}>
+              {l.label}
+            </NavLink>
+          ))}
+          <Link to="/requestquote" className="btn btn--accent nav__cta">
+            Request a quote <ArrowUpRight width={16} height={16} />
+          </Link>
+        </nav>
+
+        <button
+          className="nav__toggle"
+          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span /><span />
+        </button>
+      </div>
+
+      <div className="nav__drawer" aria-hidden={!open}>
+        {[...links, { to: '/requestquote', label: 'Request a quote' }].map((l, i) => (
+          <NavLink key={l.to} to={l.to} end={l.end} style={{ '--i': i }} className={({ isActive }) => `nav__drawer-link ${isActive ? 'is-active' : ''}`} tabIndex={open ? 0 : -1}>
+            <span className="mono">0{i + 1}</span>{l.label}
+          </NavLink>
+        ))}
+        <div className="nav__drawer-foot">
+          <a href="tel:+447828693818">07828 693818</a>
+          <a href="mailto:info@flexipaysystems.com">info@flexipaysystems.com</a>
+        </div>
+      </div>
+    </header>
   );
 };
+
 export default NavbarComponent;

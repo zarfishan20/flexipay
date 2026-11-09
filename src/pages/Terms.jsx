@@ -1,5 +1,4 @@
 
-import { Container } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
 import BackButton from "../components/BackButton";
 
@@ -16,9 +15,7 @@ const Terms = () => {
       </Helmet>
   
     
-     <Container id="terms" className="py-5 text-center" data-aos="fade-up">
- 
-   <BackButton/>
+     <section className="section legal" id="terms"><div className="wrap legal__doc"><BackButton />
  
  <h1 className="terms-title">Terms & Conditions</h1>
             <p><strong>Effective Date:</strong> 11 May 2025</p>
@@ -70,7 +67,7 @@ const Terms = () => {
               For questions regarding these terms, contact us at:<br />
               <strong>info@flexipaysystems.com</strong>
             </p>
-      </Container>
+      </div></section>
       </>
     );
   };

@@ -1,51 +1,41 @@
+import { Award } from './Icons';
 
-import { Container, Row, Col, Card } from 'react-bootstrap';
-const Recognition = () => {
+const items = [
+  { date: 'January 2022', title: 'Certified Business Consultant', text: 'Recognised for expertise and professionalism in consulting services.' },
+  { date: 'June 2021', title: 'Top Consulting Firm of the Year', text: 'Awarded for exceptional contributions and strategic consulting solutions.' },
+  { date: 'March 2020', title: 'Consulting Excellence Award', text: 'Acknowledged for outstanding performance in the consulting industry.' },
+];
 
-return(
+const Recognition = () => (
+  <section className="section recognition" id="recognition">
+    <div className="wrap recognition__grid">
+      <div className="recognition__intro" data-aos="fade-right">
+        <p className="eyebrow eyebrow--light">Recognised excellence</p>
+        <h2>Recognitions &amp; <em>certifications</em></h2>
+        <p>We’ve earned awards and accreditations that recognise our standards and our commitment to clients.</p>
+        <div className="seal" aria-hidden="true">
+          <svg viewBox="0 0 200 200">
+            <defs><path id="seal-circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
+            <text><textPath href="#seal-circle">ACCURATE · ON TIME · HMRC COMPLIANT · ACCURATE · ON TIME · </textPath></text>
+          </svg>
+          <Award width={40} height={40} />
+        </div>
+      </div>
 
-<Container
-fluid
-className="py-5 my-5 d-flex flex-column align-items-center justify-content-center" 
-id="recognition" 
-data-aos="fade-up">
-
-<h5>RECOGNIZED EXCELLENCE</h5>
-<h2 className="text-center mb-4">Recognitions & Certifications</h2>
-<p>We've earned prestigious awards & accreditations recognizing our excellence and commitment.</p>
-<Row className='g-4'>
-  <Col md={4}>
-  <Card className="p-3 shadow-sm hover-effect h-100">
-    <h5>Certified Business Consultant</h5>
-    <h6>January 2022</h6>
-    <p>Recognized for expertise and professionalism in consulting services.</p>
-    </Card>
-    </Col>
-  <Col md={4}>
-  <Card className="p-3 shadow-sm hover-effect h-100">
-    <h5>Consulting Excellence Award</h5>
-    <h6>March 2020</h6>
-    <p>Acknowledged for outstanding performance in the consulting industry.</p>
-    </Card>
-    </Col>
-
-    <Col md={4}>
-  <Card className="p-3 shadow-sm hover-effect h-100">
-    <h5>Top Consulting Firm of the Year</h5>
-    <h6>June 2021</h6>
-    <p>Awarded for exceptional contributions and strategic consulting solutions.</p>
-    </Card>
-    </Col>
- 
-</Row>
-
-
-
-
-</Container>
-
+      <ul className="ledger">
+        {items.map((it, i) => (
+          <li key={it.title} data-aos="fade-up" data-aos-delay={i * 100}>
+            <span className="ledger__date mono">{it.date}</span>
+            <div>
+              <h3>{it.title}</h3>
+              <p>{it.text}</p>
+            </div>
+            <span className="ledger__idx mono">0{i + 1}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
 );
 
-
-};
 export default Recognition;
